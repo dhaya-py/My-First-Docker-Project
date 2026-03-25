@@ -21,7 +21,7 @@ def test_db():
     try:
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("SELECT 1;")
+        cursor.execute("SELECT NOW()")
         result = cursor.fetchone()
         conn.close()
         return {"db_status": "connected", "result": result}
